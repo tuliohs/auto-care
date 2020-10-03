@@ -6,16 +6,16 @@ export default function CardServico({ title, dataCad, km, prox, icone }) {
 
   //Base para o formulario
   const BaseForm = ({ label, text }) => (
-    <View  style={{
-          alignItems: 'center',
-          flexDirection: 'row',
-          justifyContents: 'space-between',
-          color: '#a9a9a9'          
-        }}>
+    <View style={{
+      alignItems: 'center',
+      flexDirection: 'row',
+      justifyContents: 'space-between',
+      color: '#a9a9a9'
+    }}>
       <Text>{label}</Text>
       <Text style={{
-    fontWeight: 'bold',
-        }}>{text}</Text>
+        fontWeight: 'bold',
+      }}>{text}</Text>
     </View>
   );
 
@@ -42,10 +42,10 @@ export default function CardServico({ title, dataCad, km, prox, icone }) {
 const styles = StyleSheet.create({
   logo: {
     height: 40,
-          alignItems: 'flex-start',
+    alignItems: 'flex-start',
     width: 40,
   },
-  card:{
+  card: {
     borderWidth: 1,
     borderRadius: 1,
     borderColor: '#DCDCDC',

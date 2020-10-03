@@ -7,14 +7,15 @@ import {
   Image,
   FlatList,
 } from 'react-native';
+
+import Header from './Header';
 import CardServico from '../../components/Card/CardServico';
 import Constants from 'expo-constants';
-import Logo from '../../assets/Logo.png';
 import { Servicos } from './ServicosItems.js';
 
-import { FAB, Title } from 'react-native-paper';
+import { FAB } from 'react-native-paper';
 
-const HomeScreen = () => {
+const HomeScreen = ({ navigation }) => {
   const renderItem = ({ item }) => (
     <CardServico
       title={item.title}
@@ -25,44 +26,10 @@ const HomeScreen = () => {
     />
   );
 
+  const handleSelect = () => navigation.navigate("Tipo")
   return (
     <View style={styles.container}>
-      <View
-        style={{
-          justifyContent: 'center',
-          flexDirection: 'row',
-          backgroundColor: '#279B61',
-          textAlign: 'center',
-        }}>
-        <Image style={styles.logo} source={Logo} />
-        <Title
-          style={{
-            marginRight: 'auto',
-            flex: 1,
-            justifyContent: 'center',
-            textAlign: 'center',
-          }}>
-          Auto Care
-        </Title>
-      </View>
-      <View
-        style={{
-          justifyContents: 'space-between',
-          flexDirection: 'row',
-          backgroundColor: '#279B61',
-          textAlign: 'center',
-          marginTop: 2,
-        }}>
-        <Title
-          style={{
-            flex: 1,
-            justifyContents: 'space-between',
-            marginLeft: 5
-          }}>
-          Manutençã da MT 07
-        </Title>
-        <Image style={styles.logo} source={Logo} />
-      </View>
+      <Header handle={handleSelect} />
       <FlatList
         data={Servicos}
         renderItem={renderItem}
@@ -100,22 +67,3 @@ const styles = StyleSheet.create({
     width: 40,
   },
 });
-
-/*const styles = StyleSheet.create({
-  container: {
-    alignItems: 'center',
-    justifyContent: 'center',
-    padding: 24,
-  },
-  paragraph: {
-    margin: 24,
-    marginTop: 0,
-    fontSize: 14,
-    fontWeight: 'bold',
-    textAlign: 'center',
-  },
-  logo: {
-    height: 128,
-    width: 128,
-  }
-});*/
