@@ -2,16 +2,21 @@ import * as React from 'react';
 import { Text, View, StyleSheet, Image, TouchableOpacity } from 'react-native';
 
 import { Feather } from '@expo/vector-icons';
-import Logo from '../../assets/Logo.png';
+import Logo from '../assets/Logo.png';
+import { AntDesign } from '@expo/vector-icons';
 
-export default function Header({ handle, hideEdit }) {
+export default function Header({ handle, hideEdit, hideBack, nav }) {
   return (
     <>
       <View style={styles.header1}>
+        {hideBack ? <></> :
+          <TouchableOpacity onPress={() => nav.goBack()}>
+            <AntDesign name="arrowleft" size={24} color="white" />
+          </TouchableOpacity>
+        }
         <Image source={Logo} />
         <Text style={[styles.titulo, { marginLeft: -65 }]}>NEWTON PAIVA</Text>
       </View>
-
       {hideEdit ? '' : <View style={styles.header2}>
         <Text style={styles.titulo}>MOTOCICLETA (MT 07)</Text>
         <TouchableOpacity onPress={handle}>
@@ -29,7 +34,8 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     borderBottomColor: 'white',
-    borderBottomWidth: 1
+    borderBottomWidth: 1,
+    padding: 5
   },
   header2: {
     backgroundColor: '#0053a0',

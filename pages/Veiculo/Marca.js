@@ -11,7 +11,7 @@ import {
     Text
 } from 'react-native';
 import Constants from 'expo-constants';
-import Header from '../Home/Header'
+import Header from '../../components/Header'
 
 const Marcas = [
     { id: 1, name: "Honda", action: { route: "Modelo" } },
@@ -31,7 +31,7 @@ const Marca = ({ navigation }) => {
 
     return (
         <View style={styles.container}>
-            <Header hideEdit={true} />
+            <Header hideEdit={true} nav={navigation} />
             <FlatList
                 data={Marcas}
                 renderItem={renderItem}

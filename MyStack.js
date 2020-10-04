@@ -9,9 +9,10 @@ import Confirmacao from './pages/Veiculo/Confirmacao'
 
 
 const Stack = createStackNavigator();
+
 const MyStack = () => {
     return (
-        <Stack.Navigator initialRouteName="Confirmacao">
+        <Stack.Navigator initialRouteName="Home" headerMode="none">
             <Stack.Screen name="Home" component={HomeScreen} />
             <Stack.Screen name="Tipo" component={Tipo} />
             <Stack.Screen name="Marca" component={Marca} />

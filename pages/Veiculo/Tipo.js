@@ -11,7 +11,7 @@ import {
   Text
 } from 'react-native';
 import Constants from 'expo-constants';
-import Header from '../Home/Header'
+import Header from '../../components/Header'
 
 import { FAB } from 'react-native-paper';
 
@@ -39,7 +39,7 @@ const Tipo = ({ navigation }) => {
 
   return (
     <View style={styles.container}>
-      <Header hideEdit={true} />
+      <Header hideEdit={true} nav={navigation} />
       <FlatList
         data={Veiculos}
         renderItem={renderItem}

@@ -1,44 +1,24 @@
 import * as React from 'react';
-//import Battery from '../../assets/icons/Battery.png';
-
 import { AntDesign } from '@expo/vector-icons';
 
 import {
     View,
     StyleSheet,
-    TouchableOpacity,
-    FlatList,
+    Button,
     Text
 } from 'react-native';
 import Constants from 'expo-constants';
-import Header from '../Home/Header'
+import Header from '../../components/Header'
 
-const Marcas = [
-    { id: 1, name: "Honda", action: { route: "Modelo" } },
-    { id: 2, name: "Fiat", action: { route: "Modelo" } },
-    { id: 3, name: "Ford", action: { route: "Modelo" } },
-]
 const Marca = ({ navigation }) => {
-
-    //Render do FlatList
-    const renderItem = ({ item }) => (
-        <TouchableOpacity style={styles.item} onPress={() => { navigation.navigate(item.action.route) }}>
-            <Text style={{ fontSize: 22 }}>{item.name}</Text>
-            <AntDesign name="rightcircle" size={24} color="black"
-                style={{ alignItems: "right", marginLeft: "Auto", marginRight: 3 }} />
-        </TouchableOpacity>
-    );
 
     return (
         <View style={styles.container}>
-            <Header hideEdit={true} />
-            <FlatList
-                data={Marcas}
-                renderItem={renderItem}
-                style={{
-                    justifyContents: 'space-between',
-                    marginTop: 2,
-                }}></FlatList>
+            <Header hideEdit={true} nav={navigation} />
+            <Text>Tipo:Carro</Text>
+            <Text>Marca:Aston</Text>
+            <Text>Modelo: HB 20</Text>
+            <Button title="Confirmar" onPress={() => navigation.popToTop()} />
         </View>
     );
 };

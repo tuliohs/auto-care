@@ -8,7 +8,7 @@ import {
   FlatList,
 } from 'react-native';
 
-import Header from './Header';
+import Header from '../../components/Header';
 import CardServico from '../../components/Card/CardServico';
 import Constants from 'expo-constants';
 import { Servicos } from './ServicosItems.js';
@@ -25,11 +25,10 @@ const HomeScreen = ({ navigation }) => {
       icone={item.icone}
     />
   );
-
   const handleSelect = () => navigation.navigate("Tipo")
   return (
     <View style={styles.container}>
-      <Header handle={handleSelect} />
+      <Header handle={handleSelect} hideBack={true} nav={navigation} />
       <FlatList
         data={Servicos}
         renderItem={renderItem}
