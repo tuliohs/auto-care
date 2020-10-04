@@ -16,9 +16,9 @@ import Header from '../../components/Header'
 import { FAB } from 'react-native-paper';
 
 const Veiculos = [
-  { id: 1, name: "Novo Carro", action: { route: "Marca" } },
-  { id: 2, name: "Nova Moto", action: { route: "Marca" } },
-  { id: 3, name: "Novo Caminhão", action: { route: "Marca" } },
+  { id: 1, name: "Novo Carro", action: { route: "Home" } },
+  { id: 2, name: "Nova Moto", action: { route: "Home" } },
+  { id: 3, name: "Novo Caminhão", action: { route: "Home" } },
   { id: 4, name: "Moto Yamaha MT07", action: { route: "Marca" } },
   { id: 5, name: "Caminha CMC 3500 HD Turbo", action: { route: "Marca" } },
   { id: 6, name: "Carro Cherry Tiggo 7 TXS", action: { route: "Marca" } },
